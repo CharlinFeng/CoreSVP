@@ -80,7 +80,9 @@
  *  隐藏提示框
  */
 +(void)dismiss{
-    [SVProgressHUD dismiss];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [SVProgressHUD dismiss];
+    });
 }
 
 @end

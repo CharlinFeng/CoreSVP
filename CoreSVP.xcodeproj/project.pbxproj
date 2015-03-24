@@ -14,11 +14,11 @@
 		EE5A8ACD1AA9A79C000BA4AE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE5A8ACC1AA9A79C000BA4AE /* Images.xcassets */; };
 		EE5A8AD01AA9A79C000BA4AE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE5A8ACE1AA9A79C000BA4AE /* LaunchScreen.xib */; };
 		EE5A8ADC1AA9A79C000BA4AE /* CoreSVPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EE5A8ADB1AA9A79C000BA4AE /* CoreSVPTests.m */; };
-		EE5A8AF01AA9A7C6000BA4AE /* CoreSVP.m in Sources */ = {isa = PBXBuildFile; fileRef = EE5A8AE71AA9A7C6000BA4AE /* CoreSVP.m */; };
-		EE5A8AF11AA9A7C6000BA4AE /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE5A8AEA1AA9A7C6000BA4AE /* SVIndefiniteAnimatedView.m */; };
-		EE5A8AF21AA9A7C6000BA4AE /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EE5A8AEC1AA9A7C6000BA4AE /* SVProgressHUD.bundle */; };
-		EE5A8AF31AA9A7C6000BA4AE /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = EE5A8AEE1AA9A7C6000BA4AE /* SVProgressHUD.m */; };
-		EE5A8AF61AA9A8BE000BA4AE /* CoreSVP.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EE5A8AF51AA9A8BE000BA4AE /* CoreSVP.bundle */; };
+		EE8228D71AC16F9C004049D7 /* CoreSVP.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EE8228CD1AC16F9C004049D7 /* CoreSVP.bundle */; };
+		EE8228D81AC16F9C004049D7 /* CoreSVP.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8228CF1AC16F9C004049D7 /* CoreSVP.m */; };
+		EE8228D91AC16F9C004049D7 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8228D21AC16F9C004049D7 /* SVIndefiniteAnimatedView.m */; };
+		EE8228DA1AC16F9C004049D7 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EE8228D41AC16F9C004049D7 /* SVProgressHUD.bundle */; };
+		EE8228DB1AC16F9C004049D7 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8228D61AC16F9C004049D7 /* SVProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,15 +45,15 @@
 		EE5A8AD51AA9A79C000BA4AE /* CoreSVPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreSVPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE5A8ADA1AA9A79C000BA4AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE5A8ADB1AA9A79C000BA4AE /* CoreSVPTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreSVPTests.m; sourceTree = "<group>"; };
-		EE5A8AE61AA9A7C6000BA4AE /* CoreSVP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreSVP.h; sourceTree = "<group>"; };
-		EE5A8AE71AA9A7C6000BA4AE /* CoreSVP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreSVP.m; sourceTree = "<group>"; };
-		EE5A8AE91AA9A7C6000BA4AE /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
-		EE5A8AEA1AA9A7C6000BA4AE /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
-		EE5A8AEB1AA9A7C6000BA4AE /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
-		EE5A8AEC1AA9A7C6000BA4AE /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
-		EE5A8AED1AA9A7C6000BA4AE /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
-		EE5A8AEE1AA9A7C6000BA4AE /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
-		EE5A8AF51AA9A8BE000BA4AE /* CoreSVP.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CoreSVP.bundle; sourceTree = "<group>"; };
+		EE8228CD1AC16F9C004049D7 /* CoreSVP.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CoreSVP.bundle; sourceTree = "<group>"; };
+		EE8228CE1AC16F9C004049D7 /* CoreSVP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreSVP.h; sourceTree = "<group>"; };
+		EE8228CF1AC16F9C004049D7 /* CoreSVP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreSVP.m; sourceTree = "<group>"; };
+		EE8228D11AC16F9C004049D7 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		EE8228D21AC16F9C004049D7 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		EE8228D31AC16F9C004049D7 /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		EE8228D41AC16F9C004049D7 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		EE8228D51AC16F9C004049D7 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		EE8228D61AC16F9C004049D7 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +95,7 @@
 		EE5A8ABE1AA9A79C000BA4AE /* CoreSVP */ = {
 			isa = PBXGroup;
 			children = (
-				EE5A8AE51AA9A7C6000BA4AE /* CoreSVP */,
+				EE8228CC1AC16F9C004049D7 /* CoreSVP */,
 				EE5A8AC31AA9A79C000BA4AE /* AppDelegate.h */,
 				EE5A8AC41AA9A79C000BA4AE /* AppDelegate.m */,
 				EE5A8AC61AA9A79C000BA4AE /* ViewController.h */,
@@ -134,26 +134,26 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		EE5A8AE51AA9A7C6000BA4AE /* CoreSVP */ = {
+		EE8228CC1AC16F9C004049D7 /* CoreSVP */ = {
 			isa = PBXGroup;
 			children = (
-				EE5A8AF51AA9A8BE000BA4AE /* CoreSVP.bundle */,
-				EE5A8AE61AA9A7C6000BA4AE /* CoreSVP.h */,
-				EE5A8AE71AA9A7C6000BA4AE /* CoreSVP.m */,
-				EE5A8AE81AA9A7C6000BA4AE /* SVProgressHUD */,
+				EE8228CD1AC16F9C004049D7 /* CoreSVP.bundle */,
+				EE8228CE1AC16F9C004049D7 /* CoreSVP.h */,
+				EE8228CF1AC16F9C004049D7 /* CoreSVP.m */,
+				EE8228D01AC16F9C004049D7 /* SVProgressHUD */,
 			);
 			path = CoreSVP;
 			sourceTree = "<group>";
 		};
-		EE5A8AE81AA9A7C6000BA4AE /* SVProgressHUD */ = {
+		EE8228D01AC16F9C004049D7 /* SVProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
-				EE5A8AE91AA9A7C6000BA4AE /* SVIndefiniteAnimatedView.h */,
-				EE5A8AEA1AA9A7C6000BA4AE /* SVIndefiniteAnimatedView.m */,
-				EE5A8AEB1AA9A7C6000BA4AE /* SVProgressHUD-Prefix.pch */,
-				EE5A8AEC1AA9A7C6000BA4AE /* SVProgressHUD.bundle */,
-				EE5A8AED1AA9A7C6000BA4AE /* SVProgressHUD.h */,
-				EE5A8AEE1AA9A7C6000BA4AE /* SVProgressHUD.m */,
+				EE8228D11AC16F9C004049D7 /* SVIndefiniteAnimatedView.h */,
+				EE8228D21AC16F9C004049D7 /* SVIndefiniteAnimatedView.m */,
+				EE8228D31AC16F9C004049D7 /* SVProgressHUD-Prefix.pch */,
+				EE8228D41AC16F9C004049D7 /* SVProgressHUD.bundle */,
+				EE8228D51AC16F9C004049D7 /* SVProgressHUD.h */,
+				EE8228D61AC16F9C004049D7 /* SVProgressHUD.m */,
 			);
 			path = SVProgressHUD;
 			sourceTree = "<group>";
@@ -238,11 +238,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE8228DA1AC16F9C004049D7 /* SVProgressHUD.bundle in Resources */,
+				EE8228D71AC16F9C004049D7 /* CoreSVP.bundle in Resources */,
 				EE5A8ACB1AA9A79C000BA4AE /* Main.storyboard in Resources */,
 				EE5A8AD01AA9A79C000BA4AE /* LaunchScreen.xib in Resources */,
-				EE5A8AF61AA9A8BE000BA4AE /* CoreSVP.bundle in Resources */,
 				EE5A8ACD1AA9A79C000BA4AE /* Images.xcassets in Resources */,
-				EE5A8AF21AA9A7C6000BA4AE /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,12 +260,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE5A8AF11AA9A7C6000BA4AE /* SVIndefiniteAnimatedView.m in Sources */,
+				EE8228D91AC16F9C004049D7 /* SVIndefiniteAnimatedView.m in Sources */,
 				EE5A8AC81AA9A79C000BA4AE /* ViewController.m in Sources */,
 				EE5A8AC51AA9A79C000BA4AE /* AppDelegate.m in Sources */,
-				EE5A8AF01AA9A7C6000BA4AE /* CoreSVP.m in Sources */,
+				EE8228D81AC16F9C004049D7 /* CoreSVP.m in Sources */,
 				EE5A8AC21AA9A79C000BA4AE /* main.m in Sources */,
-				EE5A8AF31AA9A7C6000BA4AE /* SVProgressHUD.m in Sources */,
+				EE8228DB1AC16F9C004049D7 /* SVProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +456,7 @@
 				EE5A8AE11AA9A79C000BA4AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EE5A8AE21AA9A79C000BA4AE /* Build configuration list for PBXNativeTarget "CoreSVPTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +465,7 @@
 				EE5A8AE41AA9A79C000BA4AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
