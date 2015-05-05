@@ -14,7 +14,17 @@
 @implementation CoreSVP
 
 
-+(void)showSVPWithType:(CoreSVPType)type Msg:(NSString *)msg duration:(CGFloat)duration allowEdit:(BOOL)allowEdit completeBlock:(void(^)())completeBlock{
+/**
+ *  展示提示框
+ *
+ *  @param type          类型
+ *  @param msg           文字
+ *  @param duration      时间（当type=CoreSVPTypeLoadingInterface时无效）
+ *  @param allowEdit     否允许编辑
+ *  @param beginBlock    提示开始时的回调
+ *  @param completeBlock 提示结束时的回调
+ */
++(void)showSVPWithType:(CoreSVPType)type Msg:(NSString *)msg duration:(CGFloat)duration allowEdit:(BOOL)allowEdit beginBlock:(void(^)())beginBlock completeBlock:(void(^)())completeBlock{
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         //设置背景色
@@ -32,9 +42,7 @@
         
         //设置时间
         [SVProgressHUD setDuration:duration];
-        
-        //设置回调
-        [SVProgressHUD setCompleteBlock:completeBlock];
+
         
         //错误图片
         [SVProgressHUD setErrorImage:[UIImage imageNamed:@"CoreSVP.bundle/SVPError"]];
@@ -44,6 +52,13 @@
         
         SVProgressHUDMaskType maskType=allowEdit?SVProgressHUDMaskTypeNone:SVProgressHUDMaskTypeClear;
         [SVProgressHUD setDefaultMaskType:maskType];
+        
+        //开始回调
+        if(beginBlock != nil) beginBlock();
+        
+        //结束回调
+        [SVProgressHUD setCompleteBlock:completeBlock];
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             switch (type) {
                     
