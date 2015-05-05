@@ -9,6 +9,8 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "SVProgressHUD.h"
+
 
 typedef enum {
     
@@ -18,7 +20,7 @@ typedef enum {
     
     CoreSVPTypeInfo,                                                                        //Info
     
-    CoreSVPTypeLoadingInterface,                                                         //Progress,可以互
+    CoreSVPTypeLoadingInterface,                                                            //Progress,可以互
     
     CoreSVPTypeError,                                                                       //error
     
@@ -46,6 +48,14 @@ typedef enum {
 *  @param completeBlock 提示结束时的回调
 */
 +(void)showSVPWithType:(CoreSVPType)type Msg:(NSString *)msg duration:(CGFloat)duration allowEdit:(BOOL)allowEdit beginBlock:(void(^)())beginBlock completeBlock:(void(^)())completeBlock;
+
+
+/*
+ *  进度
+ */
++(void)showProgess:(CGFloat)progress Msg:(NSString *)msg maskType:(SVProgressHUDMaskType)maskType;
+
+
 
 
 /**

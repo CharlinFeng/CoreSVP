@@ -23,11 +23,7 @@
 - (IBAction)btnClick:(id)sender {
     
 
-    [CoreSVP showSVPWithType:CoreSVPTypeSuccess Msg:@"成功" duration:4.0f allowEdit:NO beginBlock:^{
-        NSLog(@"开始");
-    }completeBlock:^{
-        NSLog(@"done:%@",[NSThread currentThread]);
-    }];
+    [CoreSVP showProgess:1 Msg:@"加载中" maskType:SVProgressHUDMaskTypeGradient];
  
 }
 

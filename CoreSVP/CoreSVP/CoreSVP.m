@@ -7,7 +7,7 @@
 //
 
 #import "CoreSVP.h"
-#import "SVProgressHUD.h"
+
 #define rgba(r,g,b,a) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
 
 
@@ -27,14 +27,9 @@
 +(void)showSVPWithType:(CoreSVPType)type Msg:(NSString *)msg duration:(CGFloat)duration allowEdit:(BOOL)allowEdit beginBlock:(void(^)())beginBlock completeBlock:(void(^)())completeBlock{
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        //设置背景色
-        [SVProgressHUD setBackgroundColor:rgba(0, 0, 0, .68f)];
         
-        //文字颜色
-        [SVProgressHUD setForegroundColor:[UIColor whiteColor]];
-        
-        //字体大小
-        [SVProgressHUD setFont:[UIFont systemFontOfSize:18.0f]];
+        //基本配置
+        [self hudSetting];
 
         if(CoreSVPTypeBottomMsg == type){
             [SVProgressHUD setOffsetFromCenter:UIOffsetMake(0, [UIScreen mainScreen].applicationFrame.size.height * .5f-49.0f)];
@@ -88,6 +83,45 @@
             }
         });
     });
+}
+
+
+/*
+ *  进度
+ */
++(void)showProgess:(CGFloat)progress Msg:(NSString *)msg maskType:(SVProgressHUDMaskType)maskType{
+    
+    if (progress<=0) progress = 0;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        //基本配置
+        [self hudSetting];
+        
+        [SVProgressHUD showProgress:progress status:msg maskType:maskType];
+        
+        if(progress>=1) {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self dismiss];
+            });
+        }
+    });
+}
+
+
+/*
+ *  基本配置
+ */
++(void)hudSetting{
+    
+    //设置背景色
+    [SVProgressHUD setBackgroundColor:rgba(0, 0, 0, .68f)];
+    
+    //文字颜色
+    [SVProgressHUD setForegroundColor:[UIColor whiteColor]];
+    
+    //字体大小
+    [SVProgressHUD setFont:[UIFont systemFontOfSize:18.0f]];
 }
 
 
