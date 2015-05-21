@@ -29,7 +29,6 @@
 
 - (void)layoutAnimatedLayer {
     CALayer *layer = self.indefiniteAnimatedLayer;
-    
     [self.layer addSublayer:layer];
     layer.position = CGPointMake(CGRectGetWidth(self.bounds) - CGRectGetWidth(layer.bounds) / 2, CGRectGetHeight(self.bounds) - CGRectGetHeight(layer.bounds) / 2);
 }
@@ -56,7 +55,13 @@
         _indefiniteAnimatedLayer.path = smoothedPath.CGPath;
         
         CALayer *maskLayer = [CALayer layer];
-        maskLayer.contents = (id)[[UIImage imageNamed:@"SVProgressHUD.bundle/angle-mask"] CGImage];
+        
+        NSBundle *bundle = [NSBundle bundleForClass:self.class];
+        NSURL *url = [bundle URLForResource:@"SVProgressHUD" withExtension:@"bundle"];
+        NSBundle *imageBundle = [NSBundle bundleWithURL:url];
+        NSString *path = [imageBundle pathForResource:@"angle-mask" ofType:@"png"];
+        
+        maskLayer.contents = (id)[[UIImage imageWithContentsOfFile:path] CGImage];;
         maskLayer.frame = _indefiniteAnimatedLayer.bounds;
         _indefiniteAnimatedLayer.mask = maskLayer;
         
@@ -65,7 +70,7 @@
         
         CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
         animation.fromValue = 0;
-        animation.toValue = [NSNumber numberWithFloat:M_PI*2];
+        animation.toValue = @(M_PI*2);
         animation.duration = animationDuration;
         animation.timingFunction = linearCurve;
         animation.removedOnCompletion = NO;
@@ -96,21 +101,26 @@
 }
 
 - (void)setFrame:(CGRect)frame {
-    [super setFrame:frame];
-    
-    if (self.superview) {
-        [self layoutAnimatedLayer];
+    if(!CGRectEqualToRect(frame, super.frame)){
+        [super setFrame:frame];
+        
+        if (self.superview) {
+            [self layoutAnimatedLayer];
+        }
     }
+    
 }
 
 - (void)setRadius:(CGFloat)radius {
-    _radius = radius;
-    
-    [_indefiniteAnimatedLayer removeFromSuperlayer];
-    _indefiniteAnimatedLayer = nil;
-    
-    if (self.superview) {
-        [self layoutAnimatedLayer];
+    if(radius != _radius){
+        _radius = radius;
+        
+        [_indefiniteAnimatedLayer removeFromSuperlayer];
+        _indefiniteAnimatedLayer = nil;
+        
+        if (self.superview) {
+            [self layoutAnimatedLayer];
+        }
     }
 }
 

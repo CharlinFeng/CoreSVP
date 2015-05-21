@@ -26,7 +26,7 @@
  */
 +(void)showSVPWithType:(CoreSVPType)type Msg:(NSString *)msg duration:(CGFloat)duration allowEdit:(BOOL)allowEdit beginBlock:(void(^)())beginBlock completeBlock:(void(^)())completeBlock{
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    dispatch_async(dispatch_get_main_queue(), ^{
         
         //基本配置
         [self hudSetting];
@@ -37,7 +37,9 @@
         
         //设置时间
         [SVProgressHUD setDuration:duration];
-
+        
+        //设置线宽
+        [SVProgressHUD setRingThickness:2.5f];
         
         //错误图片
         [SVProgressHUD setErrorImage:[UIImage imageNamed:@"CoreSVP.bundle/SVPError"]];
@@ -51,37 +53,36 @@
         //开始回调
         if(beginBlock != nil) beginBlock();
         
-        //结束回调
+        //设置完成回调
         [SVProgressHUD setCompleteBlock:completeBlock];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            switch (type) {
-                    
-                case CoreSVPTypeCenterMsg:
-                case CoreSVPTypeBottomMsg:
-                    [SVProgressHUD showImage:nil status:msg];
-                    break;
-                    
-                case CoreSVPTypeInfo:
-                    [SVProgressHUD showInfoWithStatus:msg];
-                    break;
-                    
-                case CoreSVPTypeLoadingInterface:
-                    [SVProgressHUD showWithStatus:msg];
-                    break;
-                    
-                case CoreSVPTypeError:
-                    [SVProgressHUD showErrorWithStatus:msg];
-                    break;
-                    
-                case CoreSVPTypeSuccess:
-                    [SVProgressHUD showSuccessWithStatus:msg];
-                    break;
-                    
-                default:
-                    break;
-            }
-        });
+
+        switch (type) {
+                
+            case CoreSVPTypeCenterMsg:
+            case CoreSVPTypeBottomMsg:
+                [SVProgressHUD showImage:nil status:msg];
+                break;
+                
+            case CoreSVPTypeInfo:
+                [SVProgressHUD showInfoWithStatus:msg];
+                break;
+                
+            case CoreSVPTypeLoadingInterface:
+                [SVProgressHUD showWithStatus:msg];
+                break;
+                
+            case CoreSVPTypeError:
+                [SVProgressHUD showErrorWithStatus:msg];
+                break;
+                
+            case CoreSVPTypeSuccess:
+                [SVProgressHUD showSuccessWithStatus:msg];
+                break;
+                
+            default:
+                break;
+        }
+       
     });
 }
 
@@ -115,7 +116,7 @@
 +(void)hudSetting{
     
     //设置背景色
-    [SVProgressHUD setBackgroundColor:rgba(0, 0, 0, .68f)];
+    [SVProgressHUD setBackgroundColor:rgba(0, 0, 0, .7f)];
     
     //文字颜色
     [SVProgressHUD setForegroundColor:[UIColor whiteColor]];

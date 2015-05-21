@@ -31,6 +31,7 @@ typedef NS_ENUM(NSUInteger, SVProgressHUDMaskType) {
 
 + (void)setBackgroundColor:(UIColor*)color;                 // default is [UIColor whiteColor]
 + (void)setForegroundColor:(UIColor*)color;                 // default is [UIColor blackColor]
++ (void)setCornerRadius:(CGFloat)cornerRadius;              // default is 14 pt
 + (void)setRingThickness:(CGFloat)width;                    // default is 4 pt
 + (void)setFont:(UIFont*)font;                              // default is [UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline]
 + (void)setInfoImage:(UIImage*)image;                       // default is the bundled info image provided by Freepik
@@ -69,14 +70,21 @@ typedef NS_ENUM(NSUInteger, SVProgressHUDMaskType) {
 
 + (void)setOffsetFromCenter:(UIOffset)offset;
 + (void)resetOffsetFromCenter;
-+(void)setDuration:(CGFloat)duration;
-+(void)setCompleteBlock:(void(^)())completeBlock;
 
 + (void)popActivity; // decrease activity count, if activity count == 0 the HUD is dismissed
 + (void)dismiss;
 
-
 + (BOOL)isVisible;
+
+
+
+
+
+/** 对HUB进行扩展 */
++(void)setDuration:(NSTimeInterval)duration;
+
+/** 完成时回调 */
++(void)setCompleteBlock:(void(^)())completeBlock;
 
 @end
 
