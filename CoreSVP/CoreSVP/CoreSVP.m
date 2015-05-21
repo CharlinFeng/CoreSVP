@@ -31,15 +31,11 @@
         //基本配置
         [self hudSetting];
 
-        if(CoreSVPTypeBottomMsg == type){
-            [SVProgressHUD setOffsetFromCenter:UIOffsetMake(0, [UIScreen mainScreen].applicationFrame.size.height * .5f-49.0f)];
-        }
+        if(CoreSVPTypeBottomMsg == type) [SVProgressHUD setOffsetFromCenter:UIOffsetMake(0, [UIScreen mainScreen].applicationFrame.size.height * .5f-49.0f)];
+        
         
         //设置时间
         [SVProgressHUD setDuration:duration];
-        
-        //设置线宽
-        [SVProgressHUD setRingThickness:2.5f];
         
         //错误图片
         [SVProgressHUD setErrorImage:[UIImage imageNamed:@"CoreSVP.bundle/SVPError"]];
@@ -53,8 +49,7 @@
         //开始回调
         if(beginBlock != nil) beginBlock();
         
-        //设置完成回调
-        [SVProgressHUD setCompleteBlock:completeBlock];
+        if(CoreSVPTypeLoadingInterface != type) [SVProgressHUD setCompleteBlock:completeBlock];
 
         switch (type) {
                 
@@ -123,6 +118,12 @@
     
     //字体大小
     [SVProgressHUD setFont:[UIFont systemFontOfSize:18.0f]];
+    
+    //设置线宽
+    [SVProgressHUD setRingThickness:2.5f];
+    
+    //边角
+    [SVProgressHUD setCornerRadius:4.0f];
 }
 
 
