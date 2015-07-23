@@ -8,7 +8,16 @@
 
 #import "CoreSVP.h"
 
+static CoreSVPType SVPtype = CoreSVPTypeNone;
+
 #define rgba(r,g,b,a) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
+
+@interface CoreSVP ()
+
+
+
+@end
+
 
 
 @implementation CoreSVP
@@ -25,6 +34,27 @@
  *  @param completeBlock 提示结束时的回调
  */
 +(void)showSVPWithType:(CoreSVPType)type Msg:(NSString *)msg duration:(CGFloat)duration allowEdit:(BOOL)allowEdit beginBlock:(void(^)())beginBlock completeBlock:(void(^)())completeBlock{
+    
+    if(CoreSVPTypeLoadingInterface != type && CoreSVPTypeLoadingInterface == SVPtype){
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.8f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            SVPtype = type;
+            
+            [self showSVPWithType:type Msg:msg duration:duration allowEdit:allowEdit beginBlock:beginBlock completeBlock:completeBlock];
+        });
+        
+        return;
+    }
+    
+    //记录状态
+    SVPtype = type;
+
+    
+    //无状态直接返回
+    if (CoreSVPTypeNone == type) return;
+    
+    
     
     dispatch_async(dispatch_get_main_queue(), ^{
         
@@ -131,6 +161,7 @@
  *  隐藏提示框
  */
 +(void)dismiss{
+
     dispatch_async(dispatch_get_main_queue(), ^{
         [SVProgressHUD dismiss];
     });
