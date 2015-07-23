@@ -68,10 +68,13 @@ static CoreSVPType SVPtype = CoreSVPTypeNone;
         [SVProgressHUD setDuration:duration];
         
         //错误图片
-        [SVProgressHUD setErrorImage:[UIImage imageNamed:@"CoreSVP.bundle/SVPError"]];
+        [SVProgressHUD setErrorImage:[UIImage imageNamed:@"SVP.bundle/red"]];
         
         //成功图片
-        [SVProgressHUD setSuccessImage:[UIImage imageNamed:@"CoreSVP.bundle/SVPSuccess"]];
+        [SVProgressHUD setSuccessImage:[UIImage imageNamed:@"SVP.bundle/green"]];
+        
+        //警告图片
+        [SVProgressHUD setInfoImage:[UIImage imageNamed:@"SVP.bundle/yellow"]];
         
         SVProgressHUDMaskType maskType=allowEdit?SVProgressHUDMaskTypeNone:SVProgressHUDMaskTypeClear;
         [SVProgressHUD setDefaultMaskType:maskType];
@@ -141,19 +144,19 @@ static CoreSVPType SVPtype = CoreSVPTypeNone;
 +(void)hudSetting{
     
     //设置背景色
-    [SVProgressHUD setBackgroundColor:rgba(0, 0, 0, .7f)];
+    [SVProgressHUD setBackgroundColor:rgba(92,93,94,1)];
     
     //文字颜色
-    [SVProgressHUD setForegroundColor:[UIColor whiteColor]];
+    [SVProgressHUD setForegroundColor:rgba(241, 241, 241, 1)];
     
     //字体大小
-    [SVProgressHUD setFont:[UIFont systemFontOfSize:18.0f]];
+    [SVProgressHUD setFont:[UIFont systemFontOfSize:16.0f]];
     
     //设置线宽
-    [SVProgressHUD setRingThickness:2.5f];
+    [SVProgressHUD setRingThickness:2.f];
     
     //边角
-    [SVProgressHUD setCornerRadius:4.0f];
+    [SVProgressHUD setCornerRadius:2.0f];
 }
 
 
