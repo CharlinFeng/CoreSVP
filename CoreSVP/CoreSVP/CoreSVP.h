@@ -11,6 +11,13 @@
 #import <UIKit/UIKit.h>
 #import "SVProgressHUD.h"
 
+#define CoreSVPSuccess(msg) [CoreSVP showSVPWithType:CoreSVPTypeSuccess Msg:msg duration:1.5 allowEdit:NO beginBlock:nil completeBlock:nil];
+#define CoreSVPError(msg) [CoreSVP showSVPWithType:CoreSVPTypeError Msg:msg duration:2.0 allowEdit:NO beginBlock:nil completeBlock:nil];
+#define CoreSVPLoading(msg,allow) [CoreSVP showSVPWithType:CoreSVPTypeLoadingInterface Msg:msg duration:0 allowEdit:allow beginBlock:nil completeBlock:nil];
+
+
+
+
 
 typedef enum {
     
@@ -65,4 +72,12 @@ typedef enum {
  */
 +(void)dismiss;
 
+
 @end
+
+
+
+
+
+
+
