@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		892A4E901B0D7E43009F00AC /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 892A4E8B1B0D7E43009F00AC /* SVIndefiniteAnimatedView.m */; };
-		892A4E911B0D7E43009F00AC /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 892A4E8D1B0D7E43009F00AC /* SVProgressHUD.bundle */; };
-		892A4E921B0D7E43009F00AC /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 892A4E8F1B0D7E43009F00AC /* SVProgressHUD.m */; };
-		89AA9FD11BABA0E900BB4093 /* CoreSVP+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AA9FD01BABA0E900BB4093 /* CoreSVP+Swift.swift */; };
-		89F75FEF1B60B0C700F2ADF3 /* SVP.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 89F75FEE1B60B0C700F2ADF3 /* SVP.bundle */; };
+		8939E7621C6DE04D00EA8766 /* CoreSVP+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8939E7561C6DE04D00EA8766 /* CoreSVP+Swift.swift */; };
+		8939E7631C6DE04D00EA8766 /* CoreSVP.m in Sources */ = {isa = PBXBuildFile; fileRef = 8939E7581C6DE04D00EA8766 /* CoreSVP.m */; };
+		8939E7641C6DE04D00EA8766 /* SVP.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8939E75A1C6DE04D00EA8766 /* SVP.bundle */; };
+		8939E7651C6DE04D00EA8766 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8939E75D1C6DE04D00EA8766 /* SVIndefiniteAnimatedView.m */; };
+		8939E7661C6DE04D00EA8766 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8939E75F1C6DE04D00EA8766 /* SVProgressHUD.bundle */; };
+		8939E7671C6DE04D00EA8766 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8939E7611C6DE04D00EA8766 /* SVProgressHUD.m */; };
 		EE5A8AC21AA9A79C000BA4AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EE5A8AC11AA9A79C000BA4AE /* main.m */; };
 		EE5A8AC51AA9A79C000BA4AE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EE5A8AC41AA9A79C000BA4AE /* AppDelegate.m */; };
 		EE5A8AC81AA9A79C000BA4AE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE5A8AC71AA9A79C000BA4AE /* ViewController.m */; };
@@ -19,7 +20,6 @@
 		EE5A8ACD1AA9A79C000BA4AE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE5A8ACC1AA9A79C000BA4AE /* Images.xcassets */; };
 		EE5A8AD01AA9A79C000BA4AE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE5A8ACE1AA9A79C000BA4AE /* LaunchScreen.xib */; };
 		EE5A8ADC1AA9A79C000BA4AE /* CoreSVPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EE5A8ADB1AA9A79C000BA4AE /* CoreSVPTests.m */; };
-		EE8228D81AC16F9C004049D7 /* CoreSVP.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8228CF1AC16F9C004049D7 /* CoreSVP.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,15 +33,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		892A4E8A1B0D7E43009F00AC /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
-		892A4E8B1B0D7E43009F00AC /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
-		892A4E8C1B0D7E43009F00AC /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
-		892A4E8D1B0D7E43009F00AC /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
-		892A4E8E1B0D7E43009F00AC /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
-		892A4E8F1B0D7E43009F00AC /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
-		89AA9FD01BABA0E900BB4093 /* CoreSVP+Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreSVP+Swift.swift"; sourceTree = "<group>"; };
+		8939E7561C6DE04D00EA8766 /* CoreSVP+Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreSVP+Swift.swift"; sourceTree = "<group>"; };
+		8939E7571C6DE04D00EA8766 /* CoreSVP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreSVP.h; sourceTree = "<group>"; };
+		8939E7581C6DE04D00EA8766 /* CoreSVP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreSVP.m; sourceTree = "<group>"; };
+		8939E75A1C6DE04D00EA8766 /* SVP.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVP.bundle; sourceTree = "<group>"; };
+		8939E75C1C6DE04D00EA8766 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		8939E75D1C6DE04D00EA8766 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		8939E75E1C6DE04D00EA8766 /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		8939E75F1C6DE04D00EA8766 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		8939E7601C6DE04D00EA8766 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		8939E7611C6DE04D00EA8766 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		89AA9FD21BABA14500BB4093 /* OC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OC.h; sourceTree = "<group>"; };
-		89F75FEE1B60B0C700F2ADF3 /* SVP.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SVP.bundle; path = Lib/SVP.bundle; sourceTree = "<group>"; };
 		EE5A8ABC1AA9A79C000BA4AE /* CoreSVP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreSVP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE5A8AC01AA9A79C000BA4AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE5A8AC11AA9A79C000BA4AE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -55,8 +57,6 @@
 		EE5A8AD51AA9A79C000BA4AE /* CoreSVPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreSVPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE5A8ADA1AA9A79C000BA4AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE5A8ADB1AA9A79C000BA4AE /* CoreSVPTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreSVPTests.m; sourceTree = "<group>"; };
-		EE8228CE1AC16F9C004049D7 /* CoreSVP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreSVP.h; sourceTree = "<group>"; };
-		EE8228CF1AC16F9C004049D7 /* CoreSVP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreSVP.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,23 +77,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		892A4E881B0D7E43009F00AC /* Lib */ = {
+		8939E7551C6DE04D00EA8766 /* CoreSVP */ = {
 			isa = PBXGroup;
 			children = (
-				892A4E891B0D7E43009F00AC /* SVProgressHUD */,
+				8939E7561C6DE04D00EA8766 /* CoreSVP+Swift.swift */,
+				8939E7571C6DE04D00EA8766 /* CoreSVP.h */,
+				8939E7581C6DE04D00EA8766 /* CoreSVP.m */,
+				8939E7591C6DE04D00EA8766 /* Lib */,
+			);
+			path = CoreSVP;
+			sourceTree = "<group>";
+		};
+		8939E7591C6DE04D00EA8766 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				8939E75A1C6DE04D00EA8766 /* SVP.bundle */,
+				8939E75B1C6DE04D00EA8766 /* SVProgressHUD */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
 		};
-		892A4E891B0D7E43009F00AC /* SVProgressHUD */ = {
+		8939E75B1C6DE04D00EA8766 /* SVProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
-				892A4E8A1B0D7E43009F00AC /* SVIndefiniteAnimatedView.h */,
-				892A4E8B1B0D7E43009F00AC /* SVIndefiniteAnimatedView.m */,
-				892A4E8C1B0D7E43009F00AC /* SVProgressHUD-Prefix.pch */,
-				892A4E8D1B0D7E43009F00AC /* SVProgressHUD.bundle */,
-				892A4E8E1B0D7E43009F00AC /* SVProgressHUD.h */,
-				892A4E8F1B0D7E43009F00AC /* SVProgressHUD.m */,
+				8939E75C1C6DE04D00EA8766 /* SVIndefiniteAnimatedView.h */,
+				8939E75D1C6DE04D00EA8766 /* SVIndefiniteAnimatedView.m */,
+				8939E75E1C6DE04D00EA8766 /* SVProgressHUD-Prefix.pch */,
+				8939E75F1C6DE04D00EA8766 /* SVProgressHUD.bundle */,
+				8939E7601C6DE04D00EA8766 /* SVProgressHUD.h */,
+				8939E7611C6DE04D00EA8766 /* SVProgressHUD.m */,
 			);
 			path = SVProgressHUD;
 			sourceTree = "<group>";
@@ -119,7 +131,7 @@
 		EE5A8ABE1AA9A79C000BA4AE /* CoreSVP */ = {
 			isa = PBXGroup;
 			children = (
-				EE8228CC1AC16F9C004049D7 /* CoreSVP */,
+				8939E7551C6DE04D00EA8766 /* CoreSVP */,
 				EE5A8AC31AA9A79C000BA4AE /* AppDelegate.h */,
 				EE5A8AC41AA9A79C000BA4AE /* AppDelegate.m */,
 				EE5A8AC61AA9A79C000BA4AE /* ViewController.h */,
@@ -157,18 +169,6 @@
 				EE5A8ADA1AA9A79C000BA4AE /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		EE8228CC1AC16F9C004049D7 /* CoreSVP */ = {
-			isa = PBXGroup;
-			children = (
-				892A4E881B0D7E43009F00AC /* Lib */,
-				EE8228CE1AC16F9C004049D7 /* CoreSVP.h */,
-				EE8228CF1AC16F9C004049D7 /* CoreSVP.m */,
-				89AA9FD01BABA0E900BB4093 /* CoreSVP+Swift.swift */,
-				89F75FEE1B60B0C700F2ADF3 /* SVP.bundle */,
-			);
-			path = CoreSVP;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +215,7 @@
 		EE5A8AB41AA9A79C000BA4AE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = muxi;
 				TargetAttributes = {
@@ -251,11 +252,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89F75FEF1B60B0C700F2ADF3 /* SVP.bundle in Resources */,
-				892A4E911B0D7E43009F00AC /* SVProgressHUD.bundle in Resources */,
+				8939E7661C6DE04D00EA8766 /* SVProgressHUD.bundle in Resources */,
 				EE5A8ACB1AA9A79C000BA4AE /* Main.storyboard in Resources */,
 				EE5A8AD01AA9A79C000BA4AE /* LaunchScreen.xib in Resources */,
 				EE5A8ACD1AA9A79C000BA4AE /* Images.xcassets in Resources */,
+				8939E7641C6DE04D00EA8766 /* SVP.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,13 +274,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				892A4E901B0D7E43009F00AC /* SVIndefiniteAnimatedView.m in Sources */,
+				8939E7621C6DE04D00EA8766 /* CoreSVP+Swift.swift in Sources */,
+				8939E7631C6DE04D00EA8766 /* CoreSVP.m in Sources */,
 				EE5A8AC81AA9A79C000BA4AE /* ViewController.m in Sources */,
+				8939E7671C6DE04D00EA8766 /* SVProgressHUD.m in Sources */,
 				EE5A8AC51AA9A79C000BA4AE /* AppDelegate.m in Sources */,
-				EE8228D81AC16F9C004049D7 /* CoreSVP.m in Sources */,
-				89AA9FD11BABA0E900BB4093 /* CoreSVP+Swift.swift in Sources */,
 				EE5A8AC21AA9A79C000BA4AE /* main.m in Sources */,
-				892A4E921B0D7E43009F00AC /* SVProgressHUD.m in Sources */,
+				8939E7651C6DE04D00EA8766 /* SVIndefiniteAnimatedView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

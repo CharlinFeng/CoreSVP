@@ -20,7 +20,7 @@ func CoreSVPSuccess(msg: String,completeClosure:(()->())!){
 /** 失败 */
 func CoreSVPError(msg: String,completeClosure:(()->())!){
     
-    CoreSVP.showSVPWithType(CoreSVPTypeSuccess, msg: msg, duration: 2, allowEdit: false, beginBlock: nil) { () -> Void in
+    CoreSVP.showSVPWithType(CoreSVPTypeError, msg: msg, duration: 2, allowEdit: false, beginBlock: nil) { () -> Void in
         completeClosure?()
     }
 }

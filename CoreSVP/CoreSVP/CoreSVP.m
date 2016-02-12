@@ -144,10 +144,11 @@ static CoreSVPType SVPtype = CoreSVPTypeNone;
 +(void)hudSetting{
     
     //设置背景色
-    [SVProgressHUD setBackgroundColor:rgba(92,93,94,1)];
+    [SVProgressHUD setBackgroundColor:[UIColor clearColor]];
     
     //文字颜色
-    [SVProgressHUD setForegroundColor:rgba(241, 241, 241, 1)];
+    UIColor *foregroundColor = !isNightMode ? [UIColor whiteColor] : [UIColor blackColor];
+    [SVProgressHUD setForegroundColor:foregroundColor];
     
     //字体大小
     [SVProgressHUD setFont:[UIFont systemFontOfSize:16.0f]];
