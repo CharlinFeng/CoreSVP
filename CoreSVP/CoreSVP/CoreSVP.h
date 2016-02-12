@@ -13,7 +13,7 @@
 
 #define isNightMode NO
 
-#define CoreSVPSuccess(msg, CompleteBlock) [CoreSVP showSVPWithType:CoreSVPTypeSuccess Msg:msg duration:1.5 allowEdit:NO beginBlock:nil completeBlock:Block];
+#define CoreSVPSuccess(msg, CompleteBlock) [CoreSVP showSVPWithType:CoreSVPTypeSuccess Msg:msg duration:1.5 allowEdit:NO beginBlock:nil completeBlock:CompleteBlock];
 #define CoreSVPError(msg, CompleteBlock) [CoreSVP showSVPWithType:CoreSVPTypeError Msg:msg duration:2.0 allowEdit:NO beginBlock:nil completeBlock:CompleteBlock];
 #define CoreSVPWarning(msg, CompleteBlock) [CoreSVP showSVPWithType:CoreSVPTypeInfo Msg:msg duration:2.0 allowEdit:NO beginBlock:nil completeBlock:CompleteBlock];
 #define CoreSVPLoading(msg,allow) [CoreSVP showSVPWithType:CoreSVPTypeLoadingInterface Msg:msg duration:0 allowEdit:allow beginBlock:nil completeBlock:nil];

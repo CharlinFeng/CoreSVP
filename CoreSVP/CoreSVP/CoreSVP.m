@@ -101,11 +101,9 @@ static CoreSVPType SVPtype = CoreSVPTypeNone;
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(duration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 
                 [self dismiss];
-                
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    
-                    completeBlock();
-                });
+
+                completeBlock();
+
             });
         }
         

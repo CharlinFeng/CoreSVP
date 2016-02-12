@@ -26,6 +26,9 @@
 
 - (IBAction)btnClick:(id)sender {
 
+    CoreSVPSuccess(@"操作成功", ^{
+        NSLog(@"回调");
+    })
 }
 
 
