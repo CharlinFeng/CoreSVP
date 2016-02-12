@@ -13,29 +13,37 @@
 
 #define isNightMode NO
 
-#define CoreSVPSuccess(msg) [CoreSVP showSVPWithType:CoreSVPTypeSuccess Msg:msg duration:1.5 allowEdit:NO beginBlock:nil completeBlock:nil];
-#define CoreSVPError(msg) [CoreSVP showSVPWithType:CoreSVPTypeError Msg:msg duration:2.0 allowEdit:NO beginBlock:nil completeBlock:nil];
+#define CoreSVPSuccess(msg, CompleteBlock) [CoreSVP showSVPWithType:CoreSVPTypeSuccess Msg:msg duration:1.5 allowEdit:NO beginBlock:nil completeBlock:Block];
+#define CoreSVPError(msg, CompleteBlock) [CoreSVP showSVPWithType:CoreSVPTypeError Msg:msg duration:2.0 allowEdit:NO beginBlock:nil completeBlock:CompleteBlock];
+#define CoreSVPWarning(msg, CompleteBlock) [CoreSVP showSVPWithType:CoreSVPTypeInfo Msg:msg duration:2.0 allowEdit:NO beginBlock:nil completeBlock:CompleteBlock];
 #define CoreSVPLoading(msg,allow) [CoreSVP showSVPWithType:CoreSVPTypeLoadingInterface Msg:msg duration:0 allowEdit:allow beginBlock:nil completeBlock:nil];
-#define CoreSVPBottomMsg(msg) [CoreSVP showSVPWithType:CoreSVPTypeBottomMsg Msg:msg duration:2 allowEdit:NO beginBlock:nil completeBlock:nil];
-
-
+#define CoreSVPBottomMsg(msg, CompleteBlock) [CoreSVP showSVPWithType:CoreSVPTypeBottomMsg Msg:msg duration:2 allowEdit:NO beginBlock:nil completeBlock:CompleteBlock];
+#define CoreSVPDismiss [CoreSVP dismiss];
+#define CoreSVPDismissDelay(delay) [CoreSVP dismiss:delay];
 
 
 typedef enum {
     
-    CoreSVPTypeNone = 0,                                                                    //默认无状态
+    /** 默认无状态 */
+    CoreSVPTypeNone = 0,
     
-    CoreSVPTypeCenterMsg,                                                                   //无图片普通提示，显示在屏幕正中间
+    /** 无图片普通提示，显示在屏幕正中间 */
+    CoreSVPTypeCenterMsg,
     
-    CoreSVPTypeBottomMsg,                                                                   //无图片普通提示，显示在屏幕下方，tabbar之上
+    /** 无图片普通提示，显示在屏幕下方，tabbar之上 */
+    CoreSVPTypeBottomMsg,
     
-    CoreSVPTypeInfo,                                                                        //Info
+    /** Info */
+    CoreSVPTypeInfo,
     
-    CoreSVPTypeLoadingInterface,                                                            //Progress,可以互
+    /** Progress */
+    CoreSVPTypeLoadingInterface,
     
-    CoreSVPTypeError,                                                                       //error
+    /** error */
+    CoreSVPTypeError,
     
-    CoreSVPTypeSuccess                                                                      //success
+    /** success */
+    CoreSVPTypeSuccess
 
 }CoreSVPType;
 
@@ -73,6 +81,7 @@ typedef enum {
  *  隐藏提示框
  */
 +(void)dismiss;
++(void)dismiss:(NSTimeInterval)delay;
 
 
 @end

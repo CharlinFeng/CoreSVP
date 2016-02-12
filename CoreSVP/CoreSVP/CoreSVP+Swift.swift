@@ -25,10 +25,12 @@ func CoreSVPError(msg: String,completeClosure:(()->())!){
     }
 }
 
-/** 进度 */
-func CoreSVPLoading(msg: String){
+/** 注意 */
+func CoreSVPWarning(msg: String,completeClosure:(()->())!){
     
-    CoreSVP.showSVPWithType(CoreSVPTypeLoadingInterface, msg: msg, duration: 0, allowEdit: false, beginBlock: nil, completeBlock: nil)
+    CoreSVP.showSVPWithType(CoreSVPTypeInfo, msg: msg, duration: 2, allowEdit: false, beginBlock: nil) { () -> Void in
+        completeClosure?()
+    }
 }
 
 
@@ -40,11 +42,14 @@ func CoreSVPBottomMsg(msg: String,completeClosure:(()->())!){
     }
 }
 
+/** 进度 */
+func CoreSVPLoading(msg: String){
+    
+    CoreSVP.showSVPWithType(CoreSVPTypeLoadingInterface, msg: msg, duration: 0, allowEdit: false, beginBlock: nil, completeBlock: nil)
+}
 
 
 
-
-
-
-
-
+/**  消失  */
+func CoreSVPDismiss(){ CoreSVP.dismiss() }
+func CoreSVPDismissDelay(delay: NSTimeInterval){CoreSVP.dismiss(delay)}

@@ -64,7 +64,6 @@ static NSTimeInterval durationTime;
 @property (nonatomic, readonly) CGFloat visibleKeyboardHeight;
 @property (nonatomic, assign) UIOffset offsetFromCenter;
 
-@property (nonatomic,copy) void(^CompleteBlock) ();
 
 - (void)showProgress:(float)progress status:(NSString*)string maskType:(SVProgressHUDMaskType)hudMaskType;
 - (void)showImage:(UIImage*)image status:(NSString*)status duration:(NSTimeInterval)duration maskType:(SVProgressHUDMaskType)hudMaskType;
@@ -812,10 +811,6 @@ static NSTimeInterval durationTime;
                              //NSLog(@"keyWindow = %@", [UIApplication sharedApplication].keyWindow);
                          }
                      }];
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        if(self.CompleteBlock != nil) _CompleteBlock();
-    });
 }
 
 
@@ -1035,11 +1030,6 @@ static NSTimeInterval durationTime;
 /** 对HUB进行扩展 */
 +(void)setDuration:(NSTimeInterval)duration{
     durationTime = duration;
-}
-
-/** 完成时回调 */
-+(void)setCompleteBlock:(void(^)())completeBlock{
-    [self sharedView].CompleteBlock = completeBlock;
 }
 
 

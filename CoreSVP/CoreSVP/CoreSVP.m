@@ -40,7 +40,6 @@ static CoreSVPType SVPtype = CoreSVPTypeNone;
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.8f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             
             SVPtype = type;
-            
             [self showSVPWithType:type Msg:msg duration:duration allowEdit:allowEdit beginBlock:beginBlock completeBlock:completeBlock];
         });
         
@@ -50,11 +49,8 @@ static CoreSVPType SVPtype = CoreSVPTypeNone;
     //记录状态
     SVPtype = type;
 
-    
     //无状态直接返回
     if (CoreSVPTypeNone == type) return;
-    
-    
     
     dispatch_async(dispatch_get_main_queue(), ^{
         
@@ -67,22 +63,11 @@ static CoreSVPType SVPtype = CoreSVPTypeNone;
         //设置时间
         [SVProgressHUD setDuration:duration];
         
-        //错误图片
-        [SVProgressHUD setErrorImage:[UIImage imageNamed:@"SVP.bundle/red"]];
-        
-        //成功图片
-        [SVProgressHUD setSuccessImage:[UIImage imageNamed:@"SVP.bundle/green"]];
-        
-        //警告图片
-        [SVProgressHUD setInfoImage:[UIImage imageNamed:@"SVP.bundle/yellow"]];
-        
         SVProgressHUDMaskType maskType=allowEdit?SVProgressHUDMaskTypeNone:SVProgressHUDMaskTypeClear;
         [SVProgressHUD setDefaultMaskType:maskType];
         
         //开始回调
         if(beginBlock != nil) beginBlock();
-        
-        if(CoreSVPTypeLoadingInterface != type) [SVProgressHUD setCompleteBlock:completeBlock];
 
         switch (type) {
                 
@@ -111,6 +96,19 @@ static CoreSVPType SVPtype = CoreSVPTypeNone;
                 break;
         }
        
+        if(completeBlock != nil && type != CoreSVPTypeLoadingInterface){
+        
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(duration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                
+                [self dismiss];
+                
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    
+                    completeBlock();
+                });
+            });
+        }
+        
     });
 }
 
@@ -151,13 +149,22 @@ static CoreSVPType SVPtype = CoreSVPTypeNone;
     [SVProgressHUD setForegroundColor:foregroundColor];
     
     //字体大小
-    [SVProgressHUD setFont:[UIFont systemFontOfSize:16.0f]];
+    [SVProgressHUD setFont:[UIFont systemFontOfSize:18.0f]];
     
     //设置线宽
     [SVProgressHUD setRingThickness:2.f];
     
     //边角
     [SVProgressHUD setCornerRadius:2.0f];
+    
+    //错误图片
+    [SVProgressHUD setErrorImage:[UIImage imageNamed:@"SVP.bundle/red"]];
+    
+    //成功图片
+    [SVProgressHUD setSuccessImage:[UIImage imageNamed:@"SVP.bundle/green"]];
+    
+    //警告图片
+    [SVProgressHUD setInfoImage:[UIImage imageNamed:@"SVP.bundle/yellow"]];
 }
 
 
@@ -165,10 +172,22 @@ static CoreSVPType SVPtype = CoreSVPTypeNone;
  *  隐藏提示框
  */
 +(void)dismiss{
-
+    
     dispatch_async(dispatch_get_main_queue(), ^{
         [SVProgressHUD dismiss];
     });
+}
++(void)dismiss:(NSTimeInterval)delay{
+    
+    if(delay <= 0){
+    
+        [self dismiss];
+    }else {
+    
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self dismiss];
+        });
+    }
 }
 
 @end
