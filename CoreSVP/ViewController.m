@@ -14,7 +14,6 @@
 
 @property (weak, nonatomic) IBOutlet UIView *grayView;
 
-
 @end
 
 @implementation ViewController
@@ -26,9 +25,7 @@
 
 - (IBAction)btnClick:(id)sender {
 
-    CoreSVPSuccess(@"操作成功", ^{
-        NSLog(@"回调");
-    })
+    CoreSVPWarning(@"请注意", nil);
 }
 
 
