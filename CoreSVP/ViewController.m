@@ -21,11 +21,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(urlNoti:) name:@"SVProgressHUDURLNoti" object:nil];
+    
+}
+
+-(void)urlNoti:(NSNotification *)noti{
+    NSLog(@"%@",noti);
 }
 
 - (IBAction)btnClick:(id)sender {
 
-    CoreSVPWarning(@"请注意", nil);
+    CoreSVPLoading(@"加载中", @"http://4.4.4.4/")
 }
 
 

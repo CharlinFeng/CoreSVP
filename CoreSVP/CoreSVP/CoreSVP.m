@@ -69,6 +69,8 @@ static CoreSVPType SVPtype = CoreSVPTypeNone;
         //开始回调
         if(beginBlock != nil) beginBlock();
 
+        [SVProgressHUD isProgressRes:type == CoreSVPTypeLoadingInterface];
+        
         switch (type) {
                 
             case CoreSVPTypeCenterMsg:
@@ -81,6 +83,7 @@ static CoreSVPType SVPtype = CoreSVPTypeNone;
                 break;
                 
             case CoreSVPTypeLoadingInterface:
+                
                 [SVProgressHUD showWithStatus:msg];
                 break;
                 
@@ -175,17 +178,30 @@ static CoreSVPType SVPtype = CoreSVPTypeNone;
         [SVProgressHUD dismiss];
     });
 }
+
 +(void)dismiss:(NSTimeInterval)delay{
     
     if(delay <= 0){
     
         [self dismiss];
+        
     }else {
     
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self dismiss];
         });
     }
+}
+
+
+/*
+ *  加载中
+ */
++(void)showSVPLoadingWithMsg:(NSString *)msg url:(NSString *)url{
+
+    [SVProgressHUD setURL:url];
+    
+    [self showSVPWithType:CoreSVPTypeLoadingInterface Msg:msg duration:0 allowEdit:NO beginBlock:nil completeBlock:nil];
 }
 
 @end

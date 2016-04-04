@@ -16,7 +16,7 @@
 #define CoreSVPSuccess(msg, CompleteBlock) [CoreSVP showSVPWithType:CoreSVPTypeSuccess Msg:msg duration:1.5 allowEdit:NO beginBlock:nil completeBlock:CompleteBlock];
 #define CoreSVPError(msg, CompleteBlock) [CoreSVP showSVPWithType:CoreSVPTypeError Msg:msg duration:2.0 allowEdit:NO beginBlock:nil completeBlock:CompleteBlock];
 #define CoreSVPWarning(msg, CompleteBlock) [CoreSVP showSVPWithType:CoreSVPTypeInfo Msg:msg duration:2.0 allowEdit:NO beginBlock:nil completeBlock:CompleteBlock];
-#define CoreSVPLoading(msg,allow) [CoreSVP showSVPWithType:CoreSVPTypeLoadingInterface Msg:msg duration:0 allowEdit:allow beginBlock:nil completeBlock:nil];
+#define CoreSVPLoading(msg, URL) [CoreSVP showSVPLoadingWithMsg:msg url:URL];
 #define CoreSVPBottomMsg(msg, CompleteBlock) [CoreSVP showSVPWithType:CoreSVPTypeBottomMsg Msg:msg duration:2 allowEdit:NO beginBlock:nil completeBlock:CompleteBlock];
 #define CoreSVPDismiss [CoreSVP dismiss];
 #define CoreSVPDismissDelay(delay) [CoreSVP dismiss:delay];
@@ -69,11 +69,18 @@ typedef enum {
 +(void)showSVPWithType:(CoreSVPType)type Msg:(NSString *)msg duration:(CGFloat)duration allowEdit:(BOOL)allowEdit beginBlock:(void(^)())beginBlock completeBlock:(void(^)())completeBlock;
 
 
+
+
 /*
  *  进度
  */
 +(void)showProgess:(CGFloat)progress Msg:(NSString *)msg maskType:(SVProgressHUDMaskType)maskType;
 
+
+/*
+ *  加载中
+ */
++(void)showSVPLoadingWithMsg:(NSString *)msg url:(NSString *)url;
 
 
 

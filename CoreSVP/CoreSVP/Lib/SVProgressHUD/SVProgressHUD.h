@@ -73,6 +73,9 @@ typedef NS_ENUM(NSUInteger, SVProgressHUDMaskType) {
 
 + (void)popActivity; // decrease activity count, if activity count == 0 the HUD is dismissed
 + (void)dismiss;
++ (void)isProgressRes:(BOOL)res;
+
++ (void)setURL:(NSString *)url;
 
 + (BOOL)isVisible;
 
