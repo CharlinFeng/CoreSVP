@@ -26,8 +26,28 @@
 }
 
 -(void)urlNoti:(NSNotification *)noti{
-    NSLog(@"%@",noti);
+//    NSLog(@"%@",noti);
 }
+
+- (IBAction)success:(id)sender {
+    CoreSVPSuccess(@"操作成功", ^{
+    
+        NSLog(@"提示完成");
+    })
+}
+
+- (IBAction)fail:(id)sender {
+    
+    
+    CoreSVPError(@"操作失败", nil)
+}
+
+- (IBAction)info:(id)sender {
+    CoreSVPWarning(@"确定要删除？", nil)
+}
+
+
+
 
 - (IBAction)btnClick:(id)sender {
 
