@@ -1079,13 +1079,7 @@ static NSTimeInterval durationTime;
         
         [hud offBtnDidmiss];
     }
-    
-    
 }
-
-
-
-
 
 
 /** 对HUB进行扩展 */
@@ -1111,6 +1105,7 @@ static NSTimeInterval durationTime;
     
     return [super hitTest:point withEvent:event];
 }
+
 
 
 
