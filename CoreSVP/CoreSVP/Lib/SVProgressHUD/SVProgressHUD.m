@@ -1053,7 +1053,7 @@ static NSTimeInterval durationTime;
 -(void)btnClick{
 
     //发通知
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"SVProgressHUDURLNoti" object:nil userInfo:@{@"SVProgressHUDURLNoti": self.url}];
+    [[NSNotificationCenter defaultCenter] postNotificationName:SVProgressHUDURLNoti object:nil userInfo:@{SVProgressHUDURLNoti: self.url}];
     
     [self dismiss];
 }

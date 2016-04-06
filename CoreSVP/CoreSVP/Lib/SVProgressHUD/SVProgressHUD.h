@@ -25,6 +25,8 @@ typedef NS_ENUM(NSUInteger, SVProgressHUDMaskType) {
     SVProgressHUDMaskTypeGradient   // don't allow user interactions and dim the UI with a a-la-alert-view background gradient
 };
 
+#define SVProgressHUDURLNoti @"SVProgressHUDURLNoti"
+
 @interface SVProgressHUD : UIView
 
 #pragma mark - Customization
