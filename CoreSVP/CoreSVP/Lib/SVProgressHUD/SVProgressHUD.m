@@ -64,7 +64,7 @@ static NSTimeInterval durationTime;
 @property (nonatomic, readonly) CGFloat visibleKeyboardHeight;
 @property (nonatomic, assign) UIOffset offsetFromCenter;
 
-@property (nonatomic,assign) UIButton *offBtn;
+@property (nonatomic,strong) UIButton *offBtn;
 @property (nonatomic,assign) BOOL isProgress;
 @property (nonatomic,copy) NSString *url;
 
