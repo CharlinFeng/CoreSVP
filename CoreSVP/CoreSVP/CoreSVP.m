@@ -48,7 +48,7 @@ static CoreSVPType SVPtype = CoreSVPTypeNone;
     
     //记录状态
     SVPtype = type;
-
+    
     //无状态直接返回
     if (CoreSVPTypeNone == type) return;
     
@@ -56,7 +56,7 @@ static CoreSVPType SVPtype = CoreSVPTypeNone;
         
         //基本配置
         [self hudSetting];
-
+        
         if(CoreSVPTypeBottomMsg == type) [SVProgressHUD setOffsetFromCenter:UIOffsetMake(0, [UIScreen mainScreen].applicationFrame.size.height * .5f-49.0f)];
         
         
@@ -68,7 +68,7 @@ static CoreSVPType SVPtype = CoreSVPTypeNone;
         
         //开始回调
         if(beginBlock != nil) beginBlock();
-
+        
         [SVProgressHUD isProgressRes:type == CoreSVPTypeLoadingInterface];
         
         switch (type) {
@@ -98,15 +98,15 @@ static CoreSVPType SVPtype = CoreSVPTypeNone;
             default:
                 break;
         }
-       
-        if(completeBlock != nil && type != CoreSVPTypeLoadingInterface){
         
+        if(completeBlock != nil && type != CoreSVPTypeLoadingInterface){
+            
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(duration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 
                 [self dismiss];
-
+                
                 completeBlock();
-
+                
             });
         }
         
@@ -127,12 +127,12 @@ static CoreSVPType SVPtype = CoreSVPTypeNone;
         [self hudSetting];
         
         [SVProgressHUD showProgress:progress status:msg maskType:maskType];
-//        
-//        if(progress>=1) {
-//            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//                [self dismiss];
-//            });
-//        }
+        //
+        //        if(progress>=1) {
+        //            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        //                [self dismiss];
+        //            });
+        //        }
     });
 }
 
@@ -154,6 +154,9 @@ static CoreSVPType SVPtype = CoreSVPTypeNone;
     
     //设置线宽
     [SVProgressHUD setRingThickness:2.f];
+    
+    //居中
+    [SVProgressHUD setOffsetFromCenter:UIOffsetZero];
     
     //边角
     [SVProgressHUD setCornerRadius:2.0f];
@@ -182,11 +185,11 @@ static CoreSVPType SVPtype = CoreSVPTypeNone;
 +(void)dismiss:(NSTimeInterval)delay{
     
     if(delay <= 0){
-    
+        
         [self dismiss];
         
     }else {
-    
+        
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self dismiss];
         });
@@ -198,7 +201,7 @@ static CoreSVPType SVPtype = CoreSVPTypeNone;
  *  加载中
  */
 +(void)showSVPLoadingWithMsg:(NSString *)msg url:(NSString *)url{
-
+    
     [SVProgressHUD setURL:url];
     
     [self showSVPWithType:CoreSVPTypeLoadingInterface Msg:msg duration:0 allowEdit:NO beginBlock:nil completeBlock:nil];
