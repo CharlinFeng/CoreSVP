@@ -25,14 +25,17 @@
 //    }
 //}
 //
-///** 注意 */
-//func CoreSVPWarning(msg: String,completeClosure:(()->())!){
+///** 加载 */
+//func CoreSVPLoading(msg: String, url: String){
 //    
-//    CoreSVP.showSVPWithType(CoreSVPTypeInfo, msg: msg, duration: 2, allowEdit: false, beginBlock: nil) { () -> Void in
-//        completeClosure?()
-//    }
+//    CoreSVP.showSVPLoadingWithMsg(msg, url: url)
 //}
 //
+///** 进度 */
+//func CoreSVPProgress(p: CGFloat) {
+//    
+//    CoreSVP.showProgess(p, msg: "上传中", maskType: SVProgressHUDMaskType.Clear)
+//}
 //
 ///** 底部消息 */
 //func CoreSVPBottomMsg(msg: String,completeClosure:(()->())!){
