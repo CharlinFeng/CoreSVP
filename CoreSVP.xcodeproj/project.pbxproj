@@ -221,6 +221,7 @@
 				TargetAttributes = {
 					EE5A8ABB1AA9A79C000BA4AE = {
 						CreatedOnToolsVersion = 6.1.1;
+						LastSwiftMigration = 0820;
 					};
 					EE5A8AD41AA9A79C000BA4AE = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -410,6 +411,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(TARGET_NAME)/OC.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -424,6 +426,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(TARGET_NAME)/OC.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
